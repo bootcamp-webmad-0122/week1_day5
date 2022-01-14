@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+    <p>Soy un párrafo, y a la vez mi propio <em>currentTarget</em></p>
+
+
+    <script>
+
+
+        // El objeto event puede capturarse en las funciones que se invocan a raíz de un evento 
+        // Su propiedad .currentTarget hace referencia al objeto en cuestión que ha desencadenado la función
+
+        document.querySelectorAll('p').forEach(eachParagraph => {
+            eachParagraph.onclick = function (e) {
+                e.currentTarget.style.color = 'red'
+            }
+        })
+
+
+
+
+
+        // // Alternativa 1: cada elemento iterado
+        // document.querySelectorAll('p').forEach(eachParagraph => {
+        //     eachParagraph.onclick = function () {
+        //         eachParagraph.style.color = 'red'
+        //     }
+        // })
+
+
+        // // Alternativa 2: this
+        // document.querySelectorAll('p').forEach(eachParagraph => {
+        //     eachParagraph.onclick = function () {
+        //         this.style.color = 'red'
+        //     }
+        // })
+    </script>
+</body>
+
+</html>

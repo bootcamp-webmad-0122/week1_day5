@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Person {
+
+            constructor(nameValue, lastNameValue, ageValue, weightValue, celiacValue, hobbiesValue) {
+                this.name = nameValue
+                this.lastName = lastNameValue
+                this.age = ageValue
+                this.weight = weightValue
+                this.celiac = celiacValue
+                this.hobbies = hobbiesValue
+            }
+
+            gainWeight(extraKilos = 1) {
+                this.weight += extraKilos
+            }
+
+            learnNewHobby(newHobby) {
+                this.hobbies.push(newHobby)
+            }
+        }
+
+
+
+        // Instance
+        const person1 = new Person('German', 'Alvarez', 35, 172, false, ['dance', 'beer'])
+        console.log(`Me llamo ${person1.name}`)
+        person1.gainWeight(10)
+
+        // Instance
+        const person2 = new Person('Judith', 'Alvarez', 35, 172, false, ['dance'])
+        console.log(`Me llamo ${person2.name} y mis hobbies son ${person2.hobbies}`)
+        person2.learnNewHobby('sky')
+        console.log(`Ahora mis hobbies son ${person2.hobbies}`)
+
+
+    </script>
+</body>
+
+</html>

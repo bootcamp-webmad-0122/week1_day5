@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <p>Zero</p>
+        <p>One</p>
+        <p>Two</p>
+    </section>
+
+
+    <script>
+
+
+
+        // INSERT DOM AS LAST CHILD
+
+        // 1.- Create element
+        const newParagraph = document.createElement('p')
+
+        // 2.- Fulfill element
+        newParagraph.textContent = 'Nuevo item'
+        newParagraph.setAttribute('title', 'Añadido dinámicamente!')
+
+        // 3.- Append element into DOM (al final del padre)
+        document.querySelector('section').appendChild(newParagraph)
+
+
+
+
+
+
+
+        // INSERT DOM AS FIRST CHILD (same approach)
+        const newHeading = document.createElement('h5')
+
+        newHeading.innerHTML = 'Soy un <em>titulete</em>'
+        newHeading.setAttribute('class', 'main-title')
+
+        const firstParagraph = document.querySelectorAll('p')[0]
+        document.querySelector('section').insertBefore(newHeading, firstParagraph)
+
+
+
+
+
+
+
+
+        // REMOVE CHILD
+        const secondParagraph = document.querySelectorAll('p')[1]
+        document.querySelector('section').removeChild(secondParagraph)
+
+
+
+
+
+
+
+        // ADDITIONAL EXAMPLE W/ IMAGE
+        const newImage = document.createElement('img')
+
+        newImage.setAttribute('src', 'https://cosasdigitales.com/wp-content/uploads/2016/11/cosas-digitales-como-debe-ser-tu-codigo-css-260x170.jpg')
+        newImage.setAttribute('alt', 'Cerebro entrenando CSS')
+
+        document.querySelector('section').appendChild(newImage)
+
+
+
+        // // Alternative  to  ADDITIONAL EXAMPLE W/ IMAGE
+        // const imageCode = '<img src="https://cosasdigitales.com/wp-content/uploads/2016/11/cosas-digitales-como-debe-ser-tu-codigo-css-260x170.jpg" alt="Cerebro entrenando CSS">'
+        // document.querySelector('section').innerHTML += imageCode
+
+
+
+
+    </script>
+</body>
+
+</html>

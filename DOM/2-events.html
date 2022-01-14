@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Haz click en los botones</h1>
+    <button class="upperbutton">PONER EN MAYÚSCULAS TÍTULO</button>
+    <br>
+    <br>
+    <br>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+
+
+
+    <script>
+
+        const button1 = document.querySelector('.upperbutton')          // 1- select button
+
+        button1.onclick = function () {                                 // 2- assign event
+            const title = document.querySelector('h1')                  // 3- select title
+            title.style.textTransform = 'uppercase'                     // 4- change style
+        }
+
+
+
+
+
+        const buttons = document.querySelectorAll('.special')           // 1- select buttonS
+
+        for (let i = 0; i < buttons.length; i++) {                      // 2- Iterate NODES ARRAY 
+
+            buttons[i].onclick = function () {                          // 3- Assign events
+
+                const title = document.querySelector('h1')              // 4- Select NODE
+                title.style.color = 'red'                               // 5- Change style
+            }
+        }
+
+    </script>
+</body>
+
+</html>

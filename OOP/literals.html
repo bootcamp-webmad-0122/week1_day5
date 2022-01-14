@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const person = {
+            name: 'German',
+            lastName: 'Alvarez',
+            celiac: false,
+            years: 35,
+            height: 192,
+            weight: 85,
+            address: {
+                street: 'Garcia Luna',
+                neighbourhood: 'Propsperidad',
+                postalCode: 28002
+            },
+            hobbies: ['sky', 'beer', 'beerpong', 'party'],
+            subscriptions: [
+                {
+                    name: 'Netflix',
+                    cost: 12.99
+                },
+                {
+                    name: 'Spoti',
+                    cost: 9.99
+                }
+            ],
+            learnNewHobby(newHobby) {
+                this.hobbies.push(newHobby)
+            },
+            gainWeight(extraKilos = 1) {
+                this.weight += extraKilos
+            },
+            getAllSubscriptions() {
+                const subscriptionNames = []
+                this.subscriptions.forEach(function (eachSubscription) {
+                    subscriptionNames.push(eachSubscription.name)
+                })
+                return subscriptionNames
+            },
+            removeOneSubscription(subscriptionName) {
+                let indexToRemove
+                for (let i = 0; i < this.subscriptions.length; i++) {
+                    if (this.subscriptions[i].name === subscriptionName) {
+                        indexToRemove = i
+                        break
+                    }
+                }
+                this.subscriptions.splice(indexToRemove, 1)
+            }
+        }
+
+
+        console.log(`Mi nombre es ${person.name}`)
+        person.weight++
+
+
+        console.log(`Mis hobbies son ${person.hobbies}`)
+        person.learnNewHobby('gaming')
+        console.log(`Mis hobbies son ${person.hobbies}`)
+
+
+        console.log(`Peso ${person.weight}`)
+        person.gainWeight()
+        console.log(`Ahora peso ${person.weight}`)
+        person.gainWeight(5)
+        console.log(`Ahora peso ${person.weight}`)
+
+
+        console.log(`Mis suscripciones son ${person.getAllSubscriptions()}`)
+        person.removeOneSubscription('Netflix')
+        console.log(`Mis suscripciones son ${person.getAllSubscriptions()}`)
+
+
+    </script>
+
+</body>
+
+</html>

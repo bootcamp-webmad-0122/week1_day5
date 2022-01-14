@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="title1" class="clase-inicial-primera clase-inicial-segunda">Contenido inicial</h1>
+    <h2 id="title2">Contenido secundario</h2>
+
+    <p class="paragraph">Soy el primer párrafo</p>
+    <p class="paragraph">Soy el segundo párrafo</p>
+    <p class="paragraph">Soy un párrafo</p>
+
+    <h5 class="subtitle">Soy un subtítulo</h5>
+
+
+    <script>
+
+        // Node selection through .querySelector() - returns a node OBJECT
+        const title = document.querySelector('#title1')
+        const subtitle = document.querySelector('.subtitle')
+
+        // Log node on console
+        console.log(title)          // shows tag
+        console.log({ title })      // shows node
+
+        // Show property value
+        console.log(`El texto del título era ${title.innerText}`)
+
+        // Update property value
+        title1.innerText = 'Cambiado jejejej'
+        title1.style.color = 'red'
+        title1.style.backgroundColor = 'green'
+        subtitle.innerHTML = 'Vamos <em>a fuego</em>'
+
+
+
+
+        // Node selection through .querySelectorAll() - returns an ARRAY of node OBJECTs
+        const paragraphs = document.querySelectorAll('.paragraph')
+
+        // Log nodes on console
+        console.log(paragraphs)
+
+        // Iteratr the ARRAY to update NODES
+        paragraphs.forEach(function (eachParagraph) {
+            eachParagraph.style.color = 'blue'
+        })
+
+
+    </script>
+</body>
+
+</html>

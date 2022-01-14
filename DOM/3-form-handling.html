@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Escribe algo:</h1>
+    <input type="text" class="text-input">
+    <br><br>
+    <button class="showValue">VER VALOR DEL INPUT</button>
+    <p>El valor del input es: <span class="result">?????</span></p>
+
+
+    <script>
+
+        const button = document.querySelector('.showValue')
+
+        button.onclick = function () {
+
+            const inputNode = document.querySelector('.text-input')
+            const inputValue = inputNode.value
+
+            const infoTag = document.querySelector('.result')
+            infoTag.textContent = inputValue
+        }
+
+
+
+    </script>
+</body>
+
+</html>

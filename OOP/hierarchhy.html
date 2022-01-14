@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        class User {
+            constructor(nameValue, lastNameValue, emailValue, bankAccountValue) {
+                this.name = nameValue
+                this.lastName = lastNameValue
+                this.email = emailValue
+                this.bankAccount = bankAccountValue
+            }
+
+            getFullName() {
+                return `${this.name} ${this.lastName}`
+            }
+
+            changeBankAccount(newAccount) {
+                this.bankAccount = newAccount
+            }
+
+        }
+
+
+        const user1 = new User('German', 'Alvarez', 'germantastic@yahoo.es', 'ES98-6475-4045-1627')
+
+        const fullName = user1.getFullName()
+        console.log(`Me llamo ${fullName}`)
+
+        user1.changeBankAccount('ES98-6475-4045-1624')
+        console.log(`Ahora mi cuenta es ${user1.bankAccount}`)
+
+
+        console.log('-------')
+
+
+
+
+
+        class Player extends User {
+
+            constructor(nameValue, lastNameValue, emailValue, bankAccountValue, nickValue, tokensValue) {
+                super(nameValue, lastNameValue, emailValue, bankAccountValue)
+                this.nick = nickValue
+                this.tokens = tokensValue
+                this.lives = 10
+            }
+
+            useTokens(tokensAmount) {
+                this.tokens += tokensAmount
+            }
+
+            changeNick(newNick) {
+                this.nick = newNick
+            }
+
+            looseLives(lostLives = 1) {
+                this.lives -= lostLives
+            }
+
+            buyLives(livesAmount) {
+                const cost = livesAmount * 30
+                if (this.tokens >= cost) {
+                    this.lives += livesAmount
+                } else {
+                    console.log(`Tienes ${this.tokens} tokens y recargar ${livesAmount} vidas costaría ${cost} tokens`)
+                }
+            }
+
+        }
+
+        const player1 = new Player('Raúl', 'Díaz', 'rara@yahoo.es', 'ES98-6475-4045-1627', 'MoReNiKò_Óh_98', 100)
+        console.log(`Ni nick es ${player1.nick} y tengo ${player1.tokens} tokens, yay!`)
+
+        console.log(`...pero en realidad me llamo ${player1.getFullName()} y mi email es ${player1.email}`)
+
+
+        console.log('-------')
+
+
+
+
+
+        class Witch extends Player {
+
+            constructor(nameValue, lastNameValue, emailValue, bankAccountValue, nickValue, tokensValue, spellValue) {
+                super(nameValue, lastNameValue, emailValue, bankAccountValue, nickValue, tokensValue)
+                this.spell = spellValue
+            }
+
+            makeSpell() {
+                if (this.tokens > 80) {
+                    console.log(`La bruja ${this.nick} te lanzó un hechizo de ${this.spell}, ¡OH, NO!`)
+                } else {
+                    console.log(`Tus ${this.tokens} no son suficientes, ¡RECARGA!`)
+                }
+            }
+
+        }
+
+
+
+        const witch1 = new Witch('Charini', 'Diaz', 'jushgs@msn.es', 'ES-7485-8374-0392', 'Piruja_87', 100, 'Abra Cadabra')
+        console.log(`Soy la bruja ${witch1.nick}, aunque en realidad me llamo ${witch1.getFullName()}`)
+
+        witch1.makeSpell()
+
+        console.log(`Tengo ${witch1.tokens} tokens`)
+        witch1.useTokens(-80)
+        console.log(`Tengo ${witch1.tokens} tokens`)
+
+        witch1.makeSpell()
+
+
+
+
+        console.log('-----')
+
+        class Gnome extends Player {
+
+            constructor(nameValue, lastNameValue, emailValue, bankAccountValue, nickValue, tokensValue, powerValue) {
+                super(nameValue, lastNameValue, emailValue, bankAccountValue, nickValue, tokensValue)
+                this.power = powerValue
+            }
+
+            attack() {
+                console.log(`El gnomo ${this.nick} te ${this.power}, ¡¡qué guarro!!`)
+            }
+        }
+
+
+        const gnome1 = new Gnome('Eric', 'Diaz', 'hjshs@msn.es', 'ES98-6238-8475-9238', 'David el Gnomo', 100, 'escupe')
+
+        gnome1.attack()
+        gnome1.looseLives(8)
+        gnome1.buyLives(10)
+        gnome1.useTokens(500)
+        gnome1.buyLives(20)
+        console.log(`Ahora tengo ${gnome1.lives} vidas!`)
+
+
+
+    </script>
+</body>
+
+</html>
