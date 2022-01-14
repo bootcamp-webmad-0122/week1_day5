@@ -68,14 +68,9 @@
  
     | Nombre | Argumento | Retorno | Alcance |
     | ------------- | ------------- | ------------- | ------------- |
-    | .querySelector() | Selector CSS | Objeto | Primer objeto que coincida con el selector |
-    | .querySelectorAll() | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
-    | .getElementById() | Nombre de ID | Objeto | Objeto cuyo ID coincida con el selector |
-    | .getElementsByClassName() | Nombre de clase | HTMLCollection | Array de objetos que contengan la clase argumentada |
-    | .getElementsByTagName() | Nombre de etiqueta | HTMLCollection | Array de objetos con la etiqueta argumentada |
-    | .getElementsByName() | Valor de `name` | HTMLCollection | Array de objetos que contengan el valor argumentado en su atributo `name` |
-
-    > <sub>**Nota**: `HTMLCollection` no dispone de método `.forEach()`, requiere copia. <br>Esta puede obtenerse mediante el operador de propagación (*spread operator*): `const copyArr = [...originalArr]`</sub>
+    | `.querySelector()` | Selector CSS | Objeto | Primer objeto que coincida con el selector |
+    | `.querySelectorAll()` | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
+    
 
 - Propiedades principales de los objetos HTML:
   - `.innerText`
