@@ -72,7 +72,7 @@
     | `.querySelectorAll()` | Selector CSS | NodeList | Array de objetos (nodos) que coincidan con el selector |
     
 
-- Propiedades principales de los objetos HTML:
+- Propiedades principales de los objetos HTML (nodos):
   - `.innerText`
   - `.innerHTML`
   - `.style`
