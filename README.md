@@ -68,8 +68,8 @@
  
     | Nombre | Argumento | Retorno | Alcance |
     | ------------- | ------------- | ------------- | ------------- |
-    | `.querySelector()` | Selector CSS | Objeto | Primer objeto que coincida con el selector |
-    | `.querySelectorAll()` | Selector CSS | NodeList | Array de objetos que coincidan con el selector |
+    | `.querySelector()` | Selector CSS | Nodo | Primer objeto (nodo) que coincida con el selector |
+    | `.querySelectorAll()` | Selector CSS | NodeList | Array de objetos (nodos) que coincidan con el selector |
     
 
 - Propiedades principales de los objetos HTML:
